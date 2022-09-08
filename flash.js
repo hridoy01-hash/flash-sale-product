@@ -14,13 +14,14 @@
     await displayFlashName();
 
     async function showFlashProduct(getFlashProduct) {
-        const flashProduct = getFlashProduct.flashItems
-        console.log("flashProduct", flashProduct);
+        const flashProduct = getFlashProduct.flashItems;
 
         for (let i = 0; i < flashProduct.length; i++) {
             const flashSinleProduct = flashProduct[i];
+            console.log("flashSinleProduct", flashSinleProduct);
             let FeatureImage = `https://www.soppiya.com/media/images/${BUSINESS_ID}/item/${flashSinleProduct?.itemId}/${flashSinleProduct?.image}`;
             const s0604_flash_single_product = elementMaker("div", ["s0604_flash_single_product"]);
+            s0604_flash_single_product.style.cursor = "pointer"
             const s0604_product_top_area = elementMaker("div", ["s0604_product_top_area"]);
             s0604_flash_single_product.appendChild(s0604_product_top_area);
             const s0604_product_bottom_area = elementMaker("div", ["s0604_product_bottom_area"]);
@@ -74,8 +75,37 @@
             wishlistIcon.appendChild(wishlistIconSvg);
 
             // product bottom area
-            const s0604_product_name_wrapper = elementMaker("div" , ["s0604_product_name_wrapper"]);
+            const s0604_product_name_wrapper = elementMaker("div", ["s0604_product_name_wrapper"]);
             s0604_product_bottom_area.appendChild(s0604_product_name_wrapper);
+            const s0604_product_name = elementMaker("span", ["s0604_product_name"]);
+            s0604_product_name.innerText = `${flashSinleProduct.name}`;
+            s0604_product_name_wrapper.appendChild(s0604_product_name);
+
+            const s0604_product_variant_wrapper = elementMaker("div", ["s0604_product_variant_wrapper"]);
+            s0604_product_bottom_area.appendChild(s0604_product_variant_wrapper);
+            const s0604_product_variant = elementMaker("div", ["s0604_product_variant"]);
+            if (flashSinleProduct.variationName) {
+                s0604_product_variant.textContent = `${flashSinleProduct?.variationName}`;
+                s0604_product_variant_wrapper.appendChild(s0604_product_variant);
+            };
+
+            const s0604_product_price_wrapper = elementMaker("div" , ["s0604_product_price_wrapper"]);
+            s0604_product_bottom_area.appendChild(s0604_product_price_wrapper);
+            const s0604_product_old_price_wrapper = elementMaker("div" , ["s0604_product_old_price_wrapper"]);
+            s0604_product_price_wrapper.appendChild(s0604_product_old_price_wrapper);
+            const s0604_product_old_price = elementMaker("div" , ["s0604_product_old_price","s0604_old_price_delete"]);
+            s0604_product_old_price.textContent = ` ${CURRENCY} ${flashSinleProduct.price}`;
+            s0604_product_old_price_wrapper.appendChild(s0604_product_old_price);
+            const s0604_product_new_price_wrapper = elementMaker("div" , ["s0604_product_new_price_wrapper"]);
+            s0604_product_price_wrapper.appendChild(s0604_product_new_price_wrapper);
+            const s0604_product_new_price = elementMaker("span" , ["s0604_product_new_price"]);
+            s0604_product_new_price.textContent = `${CURRENCY} ${flashSinleProduct.flashPrice}`
+            s0604_product_new_price_wrapper.appendChild(s0604_product_new_price);
+
+
+
+
+
 
 
 

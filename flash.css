@@ -56,12 +56,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
 }
 
 .s0604_flash_counter_number {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     color: #000000;
 }
@@ -394,7 +394,6 @@ body {
         transform: scale(0);
         transition: all 0.3s ease-out;
         background-color: rgba(30, 39, 46, 35%);
-        cursor: pointer;
     }
 
     .s0604_product_img_wrapper::before {
@@ -408,7 +407,6 @@ body {
         transform: scale(0);
         transition: all 0.3s ease-out;
         background-color: rgba(30, 39, 46, 35%);
-        cursor: pointer;
     }
 
     .s0604_product_img_main_wrapper::after {
@@ -422,7 +420,6 @@ body {
         transform: scale(0);
         transition: all 0.3s ease-out;
         background-color: rgba(30, 39, 46, 35%);
-        cursor: pointer;
     }
 
     .s0604_product_img_main_wrapper::before {
@@ -436,7 +433,6 @@ body {
         transform: scale(0);
         transition: all 0.3s ease-out;
         background-color: rgba(30, 39, 46, 35%);
-        cursor: pointer;
     }
 
     .s0604_flash_single_product:hover .s0604_product_img_main_wrapper:after,
