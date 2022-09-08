@@ -292,6 +292,7 @@ body {
     .s0604_icon_wrapper {
         height: 29px;
         width: 29px;
+        border: 1px solid rgba(30, 39, 46, 10%);
     }
 
     .s0604_icon_wrapper svg {
